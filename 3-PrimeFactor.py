@@ -18,27 +18,29 @@ def generatePrimeArray(maxPrime):
 
 """
 #primeNumbers = []
-toFactor = 600851475143
 
-def findFactors():
+def findPrimes(x, toFactor):
     factor = True
     prime = False
     allPrimes = []
     primeFactors = []
-    x = 2
     while (factor):
         prime = isItPrime(x, allPrimes)
         if (prime):
             allPrimes.append(x)
-            #I am here
-    
-    
+        if (x >= toFactor/2):
+            factor = False
+        x += 1
+    for a in allPrimes:
+        print a
+
 def isItPrime(x, allPrimes):
     for primeNum in allPrimes:
         if (x % primeNum == 0):
             return False
     return True 
         
+#toFactor = 600851475143
+toFactor = 100
+findFactors(2, toFactor)
 
-
-#generatePrimeArray(toFactor/2)
